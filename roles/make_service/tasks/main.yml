@@ -1,0 +1,7 @@
+---
+- name: Create VOLTTRON Service File
+  become: yes
+  ansible.builtin.template:
+    src: volttron_service.j2
+    dest: /etc/systemd/system/volttron.service
+    mode: 0644

@@ -1,0 +1,22 @@
+---
+- name: Setup VOLTTRON Config Directory
+  ansible.builtin.file:
+    path: "{{ host_configs_dir }}"
+    state: directory
+
+- name: Set Rotating Log Fact
+  ansible.builtin.set_fact:
+    rotating_log_script: "{{host_configs_dir}}/rotating_log.py"
+
+- name: Create Rotating Log Config File
+  ansible.builtin.template:
+    src: rotating_log.j2
+    dest: "{{ rotating_log_script }}"
+
+- name: Make Logs Directory
+  ansible.builtin.file:
+   path: "{{ volttron_log_directory }}"
+   state: directory
+   mode: 0755
+   group: "{{ ansible_user }}"
+   owner: "{{ ansible_user }}"
