@@ -1,0 +1,6 @@
+---
+- name: Make VOLTTRON a Service
+  hosts: "{{ on_hosts | default('all') }}"
+  roles:
+    - volttron.deployment.set_defaults
+    - volttron.deployment.make_service

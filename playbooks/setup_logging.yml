@@ -1,0 +1,6 @@
+---
+- name: Setup Rotating Logs
+  hosts: "{{ on_hosts | default('all') }}"
+  roles:
+    - volttron.deployment.set_defaults
+    - volttron.deployment.setup_logging

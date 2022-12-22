@@ -1,7 +1,7 @@
 ### We have a single role to set default variables used throughtout other roles, playbooks, etc.
 ### The reason for this is that many settings need to agree, despite being used in different roles
 ### and we want to ensure that the defaults are set/updated in a single place. This also serves to
-### gather the configurable parameters in a single place for easier referece.
+### gather the configurable parameters in a single place for easier reference.
 ---
 - name: Set default values
   set_fact:
@@ -60,6 +60,12 @@
     volttron_venv: "{{ volttron_venv | default('{{ ansible_env.HOME }}/volttron.venv') | regex_replace('^~\/', '{{ ansible_env.HOME }}/') }}"
     ## configure if the platform should be running
     platform_state: "{{ platform_state | default('running') }}"
+    ###
+    # Directory to place VOLTTRON logs # Default $HOME/logs
+    volttron_log_directory: "{{ volttron_log_directory | default('{{ ansible_env.HOME }}/logs') }}"
+    ###
+    # VOLTTRON logging level
+    volttron_log_level: "{{ volttron_log_level | default('INFO') }}"
 
     ## variables defining where the platform configuration will be placed on the node
     ###
