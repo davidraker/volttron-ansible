@@ -38,7 +38,7 @@
 # }}}
 
 
-# Note for reference, this module is developed per the patter in the ansible
+# Note for reference, this module is developed per the pattern in the ansible
 # docs here: https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_documenting.html
 
 import csv

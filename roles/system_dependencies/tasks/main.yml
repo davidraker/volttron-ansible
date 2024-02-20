@@ -1,6 +1,6 @@
 ### A role for ensuring that all system-level dependencies are installed.
 ### Many tasks in this role require admin-level access, it will make changes
-### to the system and their is no support for reverting them.
+### to the system and there is no support for reverting them.
 ---
 - name: initialize install tracker fact
   set_fact:
