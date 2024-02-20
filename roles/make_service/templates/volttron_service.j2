@@ -12,7 +12,7 @@ Group={{ansible_user}}
 WorkingDirectory={{volttron_root}}
 #Uncomment and change this to specify a different VOLTTRON_HOME
 Environment="VOLTTRON_HOME={{volttron_home}}"
-ExecStart={{volttron_venv}}/bin/volttron -vv {% if use_rotating_log is defined and (use_rotating_log | bool) %}-L {{rotating_log_script}}{% endif %}
+ExecStart={{volttron_venv}}/bin/volttron -vv {% if use_rotating_log is defined and rotating_log_script is defined and (use_rotating_log | bool) %}-L {{rotating_log_script}} {% endif %}
 
 ExecStop={{volttron_venv}}/bin/volttron-ctl shutdown --platform
 
