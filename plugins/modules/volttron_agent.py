@@ -527,7 +527,7 @@ def execute_task(module):
     agent_spec = module.params['agent_spec']
     agent_vip_id =module.params['agent_vip_id']
 
-    subprocess_env = dict(os.environ)
+    subprocess_env = os.environ.copy()
     subprocess_env.update({
         'VOLTTRON_HOME': module.params['volttron_home'],
         'VOLTTRON_ROOT': module.params['volttron_root'],
@@ -597,12 +597,12 @@ def run_module():
         "http_proxy": {
             "type": "str",
             "required": False,
-            "default": None,
+            "default": "",
         },
         "https_proxy": {
             "type": "str",
             "required": False,
-            "default": None,
+            "default": "",
         },
         "agent_configs_dir": {
             "type": "path",
