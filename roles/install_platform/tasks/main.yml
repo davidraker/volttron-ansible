@@ -30,7 +30,7 @@
     ## a non-empty target list to avoid warnings and report
     ## change status correctly
     name:
-    - setuptools
+    - setuptools>=62.4
     - setuptools-rust
   environment:
     http_proxy: "{{ http_proxy }}"
