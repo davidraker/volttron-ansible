@@ -8,7 +8,7 @@ After=network.target
 [Service]
 Type=simple
 User={{ansible_user}}
-Group={{ansible_user}}
+Group={{ansible_user_group}}
 WorkingDirectory={{volttron_root}}
 #Uncomment and change this to specify a different VOLTTRON_HOME
 Environment="VOLTTRON_HOME={{volttron_home}}"

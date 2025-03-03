@@ -18,5 +18,5 @@
    path: "{{ volttron_log_directory }}"
    state: directory
    mode: 0755
-   group: "{{ ansible_user }}"
+   group: "{{ ansible_user_group }}"
    owner: "{{ ansible_user }}"
